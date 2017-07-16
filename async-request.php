@@ -2,7 +2,7 @@
     require 'vendor/autoload.php';
 
     use GuzzleHttp\Client;
-    use GuzzleHttp\Response;
+    use GuzzleHttp\Psr7\Response;
     use GuzzleHttp\Exception\RequestException;
 
     $client = new Client();
@@ -12,10 +12,10 @@
     );
 
     $promise->then(
-        function( $response) {
+        function(Response $response) {
             echo $response->getBody();
         }, 
-        function( $exception) {
+        function(RequestException $exception) {
             echo $exception->getMessage();
         }
     );
