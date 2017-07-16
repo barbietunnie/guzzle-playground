@@ -8,7 +8,9 @@
         'GET',
         'http://jsonplaceholder.typicode.com/posts',
         [
-            'query' => 'userId=2'
+            'query' => [
+                'userId' => 2
+            ]
         ]
     );
     
